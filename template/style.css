@@ -1,0 +1,141 @@
+html{
+    font-size: 62.5; /* 16px * 62.5 =10px =1rm*/
+    box-sizing: border-box;
+}
+body{
+    font: 1.6rem Helvetica;
+    height: 100vh;
+    margin: 0;
+}
+a{
+    text-decoration: none;
+}
+
+a:hover{
+    color: blueviolet;
+}
+/*class starts with a dot*/
+.grid-container{
+    display: grid;
+    grid-template-areas:  
+     "header"
+     "main"
+     "footer";
+     grid-template-columns: 1fr;
+     grid-template-rows: 5rem 1fr 3rem;
+     height: 100%;
+} 
+.header{
+grid-area: header;
+background-color:black;
+color:floralwhite;
+display: flex;
+justify-content: space-between; /*to have content inbetween*/
+align-items: center;
+padding: 0.5rem;
+}
+.brand a{
+    color: floralwhite;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+.header-links a{
+    color: floralwhite;
+    text-decoration: none;
+}
+.header-links a:hover{
+    color: blueviolet;
+}
+.main{
+    grid-area: main;
+}
+.footer{
+    grid-area: footer;
+    display: flex; /*used to pack components*/
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color:white;
+}
+/*Home Screen*/
+
+.products{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;  /*used to align the parts fit to the screen*/
+}
+
+.products li{
+    list-style-type: none; /*used to remove default styling like underlines of the urls*/
+    padding: 0;
+    flex: 0 1 34rem;
+    margin: 1rem;
+    height: 50rem;
+    border-bottom: .1rem violet;
+}
+.product{
+    display: flex;
+    flex-direction: column; /*to check the items displayed have to be stated horisontal or vertical*/
+    justify-content: space-between;
+    height: 100%;
+}
+.product-name{
+    font-size: 2rem;
+    font-weight: bold;
+}
+.product-brand{
+font-size: 1.2rem;
+color: white;
+}
+
+.product-price{
+    font-size: 2rem;
+    font-weight: bold;
+}
+.product-image{
+    max-width: 34rem;
+    max-height: 34rem;
+}
+
+.product-rating{
+    margin-bottom: 1rem;
+}
+
+/*sidebar*/
+.brand button{
+   font-size: 3rem;
+   padding: 5rem;
+   background: none;
+   border: none;
+   color: cornsilk;
+   cursor: pointer;  
+}
+
+.sidebar{
+    position: fixed; /*to keep on top of the screen*/
+    transform: translateX(-30rem); /*to close and open*/
+    width: 20rem;
+    background-color: gray;
+    height: 100%; /*to get the wholde width*/
+    color: black;
+}
+
+.sidebar.open{
+    transform: translateX(0);
+}
+
+.sidebar-close-button{
+    border: .1rem black solid;
+    width: 3rem;
+    height: 3rem;
+    padding: .5rem;
+    border-radius: 50%;
+    font-size: 2rem;
+    padding-top: 0%;
+    cursor: pointer;
+    position: absolute; /*3 attrubets below starting from here makes the button move to right corner*/
+    right: .5rem;
+    top: 1.5rem;
+}

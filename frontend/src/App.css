@@ -1,0 +1,210 @@
+html {
+  font-size: 62.5%; /* 16px * 62.5 =10px =1rm*/
+  box-sizing: border-box;
+}
+body {
+  font: 1.6rem Helvetica;
+  height: 100vh;
+  margin: 0;
+}
+#root {                   /*this is to get the whole with in the body view*/
+  height: 100%;
+}
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: orangered;
+}
+/*class starts with a dot*/
+.grid-container {
+  display: grid;
+  grid-template-areas:  
+   "header"
+   "main"
+   "footer";
+   grid-template-columns: 1fr;
+   grid-template-rows: 5rem 1fr 3rem;
+   height: 100%;
+} 
+.header {
+grid-area: header;
+background-color:black;
+color:floralwhite;
+display: flex;
+justify-content: space-between; /*to have content inbetween*/
+align-items: center;
+padding: 0.5rem;
+}
+.brand a {
+  color: floralwhite;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+.header-links a {
+  color: floralwhite;
+  text-decoration: none;
+  padding: 1rem;
+}
+.header-links a:hover {
+  color: orangered;
+}
+.main {
+  grid-area: main;
+}
+.footer {
+  grid-area: footer;
+  display: flex; /*used to pack components*/
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color:white;
+}
+/*Home Screen*/
+
+.products {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;  /*used to align the parts fit to the screen*/
+}
+
+.products li {
+  list-style-type: none; /*used to remove default styling like underlines of the urls*/
+  padding: 0;
+  flex: 0 1 40rem;
+  margin: 1rem;
+  height: 50rem;
+  border-bottom: 0.1rem gray solid;
+}
+.product {
+  display: flex;
+  flex-direction: column; /*to check the items displayed have to be stated horisontal or vertical*/
+  justify-content: space-between;
+  height: 100%;
+}
+.product-name {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.product-brand {
+font-size: 1.2rem;
+color: #808080;
+}
+
+.product-price {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.product-image {
+  max-width: 34rem;
+  max-height: 34rem;
+}
+
+.product-rating {
+  margin-bottom: 1rem;
+}
+
+/*sidebar*/
+.brand button {
+ font-size: 3rem;
+ padding: 0.5rem;
+ background: none;
+ border: none;
+ color: cornsilk;
+ cursor: pointer;  
+}
+
+.sidebar {
+  position: fixed; /*to keep on top of the screen*/
+  transition: all .5s; /*this is to delay the side bar kind of a animation*/
+  transform: translateX(-30rem); /*to close and open*/
+  width: 30rem;
+  background-color: rgb(167, 164, 164);
+  height: 100%; /*to get the wholde width*/
+  color: black;
+}
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
+.sidebar-close-button {
+  border: .1rem black solid;
+  width: 3rem;
+  height: 3rem;
+  padding: .5rem;
+  border-radius: 50%;
+  font-size: 2rem;
+  padding-top: 0%;
+  cursor: pointer;
+  position: absolute; /*3 attrubets below starting from here makes the button move to right corner*/
+  right: .5rem;
+  top: 1.5rem;
+}
+
+/*product details ;;;;;;;;;;;;; out of 4 ;;;;;*/ 
+
+.details {
+  display: flex;  /* BIG LAYOUT goes with GRIDS and each page is designed using the FLEX as it seems */
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap; /*TODO:check the places for wrap*/
+  padding: 1rem;
+}
+
+.details-image {
+  flex: 2 1 60rem;
+}
+.details-image img{
+ max-width: 60rem;
+ width: 100%;
+}
+.details-info {
+  flex: 1 1 30rem;
+}
+
+.details-action {
+  flex: 1 1 30rem;
+}
+
+.details-info ul, .details-action ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.details-info li, .details-action li {
+margin-bottom: 1rem;
+}
+
+.back-to-result {
+  padding: 1rem;
+}
+
+.details-action {
+  border: .1rem gray solid;
+  border-radius: .5rem;
+  background-color: rgb(219, 219, 219);
+  padding: 1rem;
+}
+
+.details-action ul li:last-child {
+display: flex;
+flex-direction: column;
+}
+.button {
+  padding: 1rem;
+  border: .1rem gray solid;
+  border-radius: .5rem;
+  cursor: pointer;
+  background-color: rgb(221, 175, 88);/*it should go the button.primary*/
+}
+.button:hover {
+  border: .1rem black solid;
+}
+
+.button.primary {
+  background-color:yellow;
+}
